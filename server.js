@@ -11,6 +11,7 @@ dotenv.config();
 import categoryRoutes from './routers/categoryRoutes.js'
 import productRoutes from './routers/productRoutes.js'
 connectDB();
+// esModule
 const __filename = fileURLToPath(import.meta.url);
 const _dirname = path.dirname(__filename);
 
@@ -28,7 +29,8 @@ app.get('*', (req, res) => {
 });
 
 
-const PORT =  8080 ;
+const PORT =  process.env.PORT || 8080 ;
+
 
 app.listen(PORT, ()=>{
     console.log(`server running on ${PORT}`);
